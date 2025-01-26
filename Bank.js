@@ -58,7 +58,7 @@ transfer(amount, recipientAccount){
         this.balance -= amount;
         
         this.transactionHistory.push({ transactionType: 'Transfer', amount, to: recipientAccount.name });
-        recipientAccount.deposit(amount);
+    
         recipientAccount.transactionHistory.push({ transactionType: 'Received', amount, from: this.name });
         console.log(`Transferred ${amount} from ${this.name} to ${recipientAccount.name}.`);
     }else {
